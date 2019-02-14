@@ -6,11 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateClientsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    // Tabela Clientes
     public function up()
     {
         Schema::create('clients', function (Blueprint $table) {
@@ -20,16 +16,12 @@ class CreateClientsTable extends Migration
             $table->integer('room_id')->unsigned()->nullable();
             $table->timestamps();
         });
-        Schema::table('clients',function(Blueprint $table)  {
+		// Declarando chave estrangeira para quartos
+        Schema::table('clients',function(Blueprint $table) {
             $table->foreign('room_id')->references('id')->on('rooms')->onDelete('set null');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('clients');

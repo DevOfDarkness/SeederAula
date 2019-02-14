@@ -6,11 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateHotelsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    // Tabela dos hotéis.
     public function up()
     {
         Schema::create('hotels', function (Blueprint $table) {
@@ -24,11 +20,6 @@ class CreateHotelsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('hotels');

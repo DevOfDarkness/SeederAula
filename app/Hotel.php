@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hotel extends Model
 {
-    public function rooms(){
+	// Retorna todos os quartos do hotel.
+    public function rooms() {
         return $this->hasMany('App\Room');
     }
 
+	// Calcula o total de vagas disponíveis no hotel.
     public function vacanciesRemaining(){
-
         $rooms = $this->rooms;
         $vacancies = 0;
 
