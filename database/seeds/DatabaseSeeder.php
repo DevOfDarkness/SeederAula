@@ -8,8 +8,10 @@ class DatabaseSeeder extends Seeder
 	 * que queremos executar */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        //$this->call(UsersTableSeeder::class);
         $this->call(HotelsTableSeeder::class);
         $this->call(RoomsTableSeeder::class);
+        $this->call(ClientTableSeeder::class);
+        $this->call(LecturesTableSeeder::class);
     }
 }
